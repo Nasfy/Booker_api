@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 Route :: group ([ 'middleware' => 'auth.jwt' ], function  ()  {
     Route::get('books/current_user', ['uses' => 'BookController@get_user']);
     Route::post('/books/new', ['uses' => 'BookController@put']);
